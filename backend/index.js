@@ -9,8 +9,8 @@ app.use(cors())
 app.use(bodyParser.json())
 
 const razorpay = new Razorpay({
-	key_id: 'rzp_test_uGoq5ABJztRAhk',
-	key_secret: 'FySe2f5fie9hij1a5s6clk9B'
+	key_id: 'rzp_test_JrEBDNsKWKMAXB',
+	key_secret: 'zvpwH2dUhTkvGX0eY6qBVFpA'
 })
 
 app.get('/logo.svg', (req, res) => {
@@ -19,7 +19,7 @@ app.get('/logo.svg', (req, res) => {
 
 app.post('/verification', (req, res) => {
 	// do a validation
-	const secret = '12345678'
+	const secret = '963852741'
 
 	console.log(req.body)
 

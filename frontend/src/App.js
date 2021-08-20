@@ -19,7 +19,7 @@ function loadScript(src) {
 const __DEV__ = document.domain === 'localhost'
 
 function App() {
-	const [name, setName] = useState('Mehul')
+	const [name, setName] = useState('Delphi')
 
 	async function displayRazorpay() {
 		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
@@ -36,12 +36,12 @@ function App() {
 		console.log(data)
 
 		const options = {
-			key: __DEV__ ? 'rzp_test_uGoq5ABJztRAhk' : 'PRODUCTION_KEY',
+			key: __DEV__ ? 'rzp_test_JrEBDNsKWKMAXB' : 'PRODUCTION_KEY',
 			currency: data.currency,
 			amount: data.amount.toString(),
 			order_id: data.id,
-			name: 'Donation',
-			description: 'Thank you for nothing. Please give us some money',
+			name: 'BUY TEST',
+			description: 'YOU CAN TAKE THE TEST AFTER PAYMENT',
 			image: 'http://localhost:1337/logo.svg',
 			handler: function (response) {
 				alert(response.razorpay_payment_id)
@@ -49,9 +49,7 @@ function App() {
 				alert(response.razorpay_signature)
 			},
 			prefill: {
-				name,
-				email: 'sdfdsjfh2@ndsfdf.com',
-				phone_number: '9899999999'
+				name
 			}
 		}
 		const paymentObject = new window.Razorpay(options)
@@ -71,7 +69,7 @@ function App() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Donate $5
+					BUY TEST
 				</a>
 			</header>
 		</div>
